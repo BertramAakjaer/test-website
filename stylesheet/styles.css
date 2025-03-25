@@ -1,7 +1,6 @@
 /* General for the whole document */
 
-@import url("https://fonts.googleapis.com/css2?family=Nova+Square&family=Shrikhand&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Holtwood+One+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
   box-sizing: border-box;
@@ -9,8 +8,8 @@
   /* border: 1px red dotted; */
 }
 
-fonts .selector-for-some-widget {
-  box-sizing: content-box;
+* {
+  font-family: "Roboto", sans-serif;
 }
 
 body,
@@ -18,8 +17,10 @@ html {
   margin: 0;
   padding: 0;
   overflow: visible;
+  background-color: #0e162e;
 }
 
-.nameFont {
-  font-family: "Holtwood One SC", serif;
+.container {
+  width: 75%;
+  margin: 0 auto;
 }
