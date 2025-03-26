@@ -14,13 +14,126 @@
 
 body,
 html {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   overflow: visible;
   background-color: #0e162e;
 }
 
+body {
+  background: radial-gradient(circle, #764ba2 0%, #0e162e 120%);
+  min-height: 100vh;
+  padding: 40px 0;
+  font-family: "Roboto", "Arial", sans-serif;
+}
+
 .container {
-  width: 75%;
+  max-width: 680px;
+  flex: 1;
+}
+
+.profile-container {
+  margin-bottom: 30px;
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  }
+}
+
+.bio {
+  color: white;
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+h2 {
+  color: white;
+  font-weight: 600;
+}
+
+.links-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.link-item {
+  width: 80%;
   margin: 0 auto;
+  background: linear-gradient(135deg, #ff7eb3, #ff758c);
+  padding: 15px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.link-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0)
+  );
+  transition: all 0.3s ease;
+}
+
+.link-item:hover::before {
+  left: 100%;
+}
+
+.link-item:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  box-shadow: 0 8px 16px rgba(255, 117, 140, 0.3),
+    0 0 15px rgba(255, 117, 140, 0.6);
+}
+
+.link-item i {
+  margin-right: 10px;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.link-item:hover i {
+  transform: rotate(20deg);
+}
+
+.footer {
+  margin-top: auto;
+  font-size: 0.9rem;
+  color: white;
+  text-align: center;
 }
